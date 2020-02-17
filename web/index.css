@@ -139,6 +139,11 @@ body {
     margin-bottom: 10px;
 }
 
+.inp.inp-invalid {
+    transition: all 0.3s;
+    background: #ffffdd;
+}
+
 .inp-phone {
     background: #FFFFFF;
     border: 1px solid #DEDCDC;
@@ -187,6 +192,18 @@ body {
 }
 
 .inp-sub {
+    font-family: 'sans-serif', 'Helvetica';
+    background: rgba(90, 16, 148, 0.8);
+    border: 1px solid rgba(67, 28, 93, 0.8);
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: white;
+    width: 39%;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.play-sub {
     font-family: 'sans-serif', 'Helvetica';
     background: rgba(90, 16, 148, 0.8);
     border: 1px solid rgba(67, 28, 93, 0.8);
@@ -259,6 +276,12 @@ body {
     display: flex;
     font-family: 'sans-serif', 'Helvetica';
     margin-top: 25px;
+    align-items: flex-start;
+}
+
+.menu-box {
+    display: flex;
+    width: 87%;
 }
 
 .menu-title {
@@ -296,7 +319,7 @@ body {
 
 .images {
     padding-left: 20px;
-    width: 17%;
+    width: 70px;
 }
 
 .sum-title {
@@ -329,7 +352,6 @@ body {
 .sum {
     font-family: 'sans-serif', 'Helvetica';
     color: #777879;
-    margin-left: 110px;
 }
 
 .summ {
