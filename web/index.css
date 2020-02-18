@@ -58,13 +58,17 @@ body {
     font-size: 10px;
     color: #FFF;
 }
-
+.forms-inputs{
+    position: relative;
+}
 .billing {
     position: absolute;
+    top: 0;
 }
 
 .payment {
     position: absolute;
+    top: 0;
 }
 
 .border {
@@ -143,6 +147,11 @@ body {
     transition: all 0.3s;
     background: #ffffdd;
 }
+.inp-invalid-title{
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
 
 .inp-phone {
     background: #FFFFFF;
@@ -178,7 +187,7 @@ body {
     border-radius: 5px;
     padding: 10px;
     width: 40%;
-    margin-left: 33px;
+    margin-left: 30px;
 }
 
 .inp-zip-1 {
@@ -282,6 +291,7 @@ body {
 .menu-box {
     display: flex;
     width: 87%;
+    align-items: flex-start;
 }
 
 .menu-title {
@@ -384,8 +394,7 @@ body {
 
 /*end shop*/
 .hidden {
-    transition: all 0.1s;
+    transition: all 0.5s;
     opacity: 0;
     visibility: hidden;
-    display: none;
 }

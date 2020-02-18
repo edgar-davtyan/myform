@@ -62,11 +62,12 @@
             <p data-form="payment">Payment</p>
         </header>
         <div class="forms-inputs">
+            <p class="inp-invalid-title">Please enter your text</p>
             <div class="shipping">
                 <h2 class="title">Shipping Info</h2>
                 <h3 class="input-title">Recipient</h3>
-                <div>
-                    <input type="text" class="inp" placeholder="Full Name">
+                <div class="prev-p">
+                    <input type="text" class="inp" name="full-name" placeholder="Full Name">
                 </div>
                 <div>
                     <input type="tel" placeholder="Daytime Phone" class="inp-phone inp">
@@ -87,7 +88,7 @@
                         <option value="">Armenia</option>
                     </select>
                     <div>
-                        <input type="text" placeholder="ZIP" class="inp-zip-1 inp">
+                        <input type="text" placeholder="ZIP" name="zip" class="inp-zip-1 inp">
                     </div>
                 </div>
                 <div>
@@ -98,7 +99,7 @@
                 <h2 class="title">Billing Information</h2>
                 <h3 class="input-title">Billing Contact</h3>
                 <div>
-                    <input type="text" class="inp" placeholder="Full Name">
+                    <input type="text" class="inp" name="full-name" placeholder="Full Name">
                 </div>
                 <div>
                     <input type="email" class="inp" placeholder="Email Address">
@@ -122,7 +123,7 @@
                               stroke-linecap="round"
                               stroke-linejoin="round"/>
                     </svg>
-                    <input type="text" placeholder="ZIP" class="inp-zip inp">
+                    <input type="text" placeholder="ZIP" name="zip" class="inp-zip inp">
                 </div>
                 <div>
                     <input type="button" placeholder="Continue" class="inp-sub" value="Continue">
@@ -147,7 +148,7 @@
                     <input type="tel" placeholder="MM / YY" class="expire inp">
                     <div>
                         <h4 class="expire-number-title">Security Code</h4>
-                        <input type="number" class="expire-number inp">
+                        <input type="text" name="security-code" class="expire-number inp">
                     </div>
                 </div>
                 <div>
