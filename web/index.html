@@ -63,39 +63,50 @@
         </header>
         <div class="forms-inputs">
             <p class="inp-invalid-title">Please enter your text</p>
-            <div class="shipping">
+            <div class="form-item shipping">
                 <h2 class="title">Shipping Info</h2>
                 <h3 class="input-title">Recipient</h3>
-                <div class="prev-p">
+                <div class="input-field">
                     <input type="text" class="inp" name="full-name" placeholder="Full Name">
+                    <p class="input-message">Please enter recipient full name.</p>
                 </div>
-                <div>
+                <div class="input-field">
                     <input type="tel" placeholder="Daytime Phone" class="inp-phone inp">
                     <p class="inp-phone-title"> For delivery questions only</p>
+                    <p class="input-message">Please enter recipient phone.</p>
                 </div>
                 <h3 class="input-title">Address</h3>
-                <div>
+                <div class="input-field">
                     <input type="text" class="inp" placeholder="Street Address">
+                    <p class="input-message">Please enter recipient street address.</p>
                 </div>
-                <div>
+                <div class="input-field">
                     <input type="text" class="inp" placeholder="Apt, Suite, Bldg, Gate Code. (optional)">
+                    <p class="input-message">Please enter recipient sApt, Suite, Bldg, Gate Code. (optional).</p>
                 </div>
-                <div>
-                    <input type="text" class="inp">
+                <div class="input-field">
+                    <input type="text" class="inp" placeholder="City">
+                    <svg class="input-svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                         fill="none">
+                        <path opacity="0.8" fill-rule="evenodd" clip-rule="evenodd"
+                              d="M10 0C4.486 0 0 4.486 0 10C0 15.5138 4.486 20 10 20C15.514 20 20 15.5138 20 10C20 4.486 15.514 0 10 0ZM10.8064 13.6452H9.1936V18.3476C5.2114 17.9658 2.0342 14.7886 1.6526 10.8064H6.355V9.1936H1.6526C2.0344 5.2114 5.2114 2.0344 9.1936 1.6526V6.3548H10.8064V1.6526C14.7886 2.0342 17.9658 5.2112 18.3474 9.1936H13.6452V10.8064H18.3476C17.9658 14.7886 14.7886 17.9658 10.8064 18.3474V13.6452Z"
+                              fill="#431C5D"/>
+                    </svg>
                 </div>
                 <div class="select-op">
                     <select name="" id="" class="inp-phone">
                         <option value="">Armenia</option>
                     </select>
-                    <div>
+                    <div class="input-field">
                         <input type="text" placeholder="ZIP" name="zip" class="inp-zip-1 inp">
+                        <p class="input-message">Please enter recipient zip code.</p>
                     </div>
                 </div>
                 <div>
                     <input type="button" placeholder="Continue" class="inp-sub" value="Continue">
                 </div>
             </div>
-            <div class="billing hidden">
+            <div class="form-item billing hidden">
                 <h2 class="title">Billing Information</h2>
                 <h3 class="input-title">Billing Contact</h3>
                 <div>
@@ -111,8 +122,14 @@
                 <div>
                     <input type="text" class="inp" placeholder="Apt, Suite, Bldg, Gate Code. (optional)">
                 </div>
-                <div>
-                    <input type="text" class="inp">
+                <div class="inp-field">
+                    <input type="text" class="inp" placeholder="City">
+                    <svg class="input-svg-s" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                         fill="none">
+                        <path opacity="0.8" fill-rule="evenodd" clip-rule="evenodd"
+                              d="M10 0C4.486 0 0 4.486 0 10C0 15.5138 4.486 20 10 20C15.514 20 20 15.5138 20 10C20 4.486 15.514 0 10 0ZM10.8064 13.6452H9.1936V18.3476C5.2114 17.9658 2.0342 14.7886 1.6526 10.8064H6.355V9.1936H1.6526C2.0344 5.2114 5.2114 2.0344 9.1936 1.6526V6.3548H10.8064V1.6526C14.7886 2.0342 17.9658 5.2112 18.3474 9.1936H13.6452V10.8064H18.3476C17.9658 14.7886 14.7886 17.9658 10.8064 18.3474V13.6452Z"
+                              fill="#431C5D"/>
+                    </svg>
                 </div>
                 <div>
                     <input type="tel" placeholder="Country" class="inp-phone inp">
@@ -129,7 +146,7 @@
                     <input type="button" placeholder="Continue" class="inp-sub" value="Continue">
                 </div>
             </div>
-            <div class="payment hidden">
+            <div class="form-item payment hidden">
                 <h2 class="title">Payment</h2>
                 <div class="box-luck">
                     <img src="https://img.icons8.com/cotton/64/000000/check-lock.png" class="lock-patch">
@@ -137,22 +154,22 @@
                 </div>
                 <h3 class="input-title">Cardholder Name</h3>
                 <div>
-                    <input type="text" class="inp"  placeholder="Name as it appears on your card">
+                    <input type="text" class="inp" placeholder="Name as it appears on your card">
                 </div>
                 <h3 class="input-title">Card Number</h3>
                 <div>
-                    <input type="number" class="inp" placeholder="XXXX XXXX XXXX XXXX XXXX">
+                    <input type="text" class="inp" placeholder="XXXX XXXX XXXX XXXX">
                 </div>
                 <h4 class="input-title">Expire Date</h4>
                 <div class="expire-date-box">
-                    <input type="tel" placeholder="MM / YY" class="expire inp">
+                    <input type="text" placeholder="MM / YY" class="expire inp">
                     <div>
                         <h4 class="expire-number-title">Security Code</h4>
                         <input type="text" name="security-code" class="expire-number inp">
                     </div>
                 </div>
                 <div>
-                    <input type="submit"  class="play-sub" value="Play Securely">
+                    <input type="submit" class="play-sub" value="Play Securely">
                 </div>
             </div>
         </div>

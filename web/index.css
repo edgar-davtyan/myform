@@ -131,7 +131,44 @@ body {
     font-weight: inherit;
     line-height: 30px;
 }
-
+.input-field{
+    position: relative;
+}
+.input-message{
+    position: absolute;
+    top: -45px;
+    left: -8px;
+    background: #FFFFFF;
+    border: 1px solid rgba(222, 220, 220, 0.695907);
+    box-sizing: border-box;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-family: 'sans-serif', 'Helvetica';
+    font-size: 13px;
+    line-height: 16px;
+    color: #D0021B;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+.input-message.show{
+    opacity: 1;
+    visibility: visible;
+}
+.input-message::after {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid rgba(222, 220, 220, 0.695907);
+    position: absolute;
+    transform: rotate(45deg);
+    border-top: 0;
+    border-left: 0;
+    left: 40px;
+    background: #fff;
+}
 .inp {
     font-family: 'sans-serif', 'Helvetica';
     width: 100%;
@@ -141,8 +178,23 @@ body {
     border: 1px solid #DEDCDC;
     box-sizing: border-box;
     margin-bottom: 10px;
+    position: relative;
 }
-
+.input-svg{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.inp-field{
+    position: relative;
+}
+.input-svg-s{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
 .inp.inp-invalid {
     transition: all 0.3s;
     background: #ffffdd;
