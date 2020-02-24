@@ -18,7 +18,7 @@ let validate = {
             return;
         }
         v = v[v.length - 1].codePointAt(0);
-        if (!((v >= 48 && v <= 57))) {
+        if (!(v >= 48 && v <= 57) || (this.value.length > 12)) {
             this.value = this.value.slice(0, -1);
         }
     },
@@ -57,6 +57,14 @@ function inpRow(ev) {
         if (inputs[i].value.length == 0) {
             inputs[i].classList.add('inp-invalid');
         } else {
+            if (inputs[i].getAttribute('name') === 'zip') {
+                if (inputs[i].value.length < 4 || inputs[i].value.length > 12) {
+                    inputs[i].classList.add('inp-invalid');
+                    continue;
+                }
+            }
+
+
             inputs[i].classList.remove('inp-invalid');
             let msg = inputs[i].closest('.input-field').querySelector('.input-message');
             if (msg) {
@@ -70,9 +78,9 @@ function inpRow(ev) {
         let msg = invalid.closest('.input-field').querySelector('.input-message');
         if (msg) {
             msg.classList.add("show")
-        } else {
-            switchForm(null, ev.target.closest('.form-item').nextElementSibling)
         }
+    } else {
+        switchForm(null, ev.target.closest('.form-item').nextElementSibling)
     }
 }
 
@@ -91,12 +99,61 @@ function switchForm(ev, fObj) {
     } else {
         let formClass = ev.target.getAttribute("data-form");
         form = document.querySelector("." + formClass);
-    }if (form) {
+    }
+    if (form) {
         form.classList.remove("hidden")
     }
 }
 
+function getCounty() {
+    let req = new XMLHttpRequest();
+    req.open("GET", 'https://restcountries.eu/rest/v2/all', true);
+    req.send();
+    req.onreadystatechange = function (response) {
+        if (this.readyState == 4 && this.status == 200) {
+            let data = this.responseText;
+            data = JSON.parse(data);
+            setCountries(data)
+        }
+    };
+}
 
+let geo = document.querySelector(".input-svg");
+geo.addEventListener('click', function () {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (res) {
+            let req = new XMLHttpRequest();
+            req.open("GET", 'https://api.opencagedata.com/geocode/v1/json?q=" + res.coords.latitude + "+" + res.coords.longitude + "&key=64297b985f9e40e9a107d283ad03d5bc', true);
+            req.send();
+            req.onreadystatechange = function (response) {
+                if (this.readyState == 4 && this.status == 200) {
+                    let data = this.responseText;
+                    data = JSON.parse(data);
+                    setCity(data);
+                }
+            };
+        })
+    }
+});
+
+function setCity(data) {
+    let city = document.querySelector('[name="city"]');
+    city.value =data.results[0].components.city
+}
+
+getCounty();
+
+function setCountries(countryList) {
+    let select = document.querySelector('.country');
+    for (let i = 0; i < countryList.length; i++) {
+        let o = document.createElement("option");
+        o.innerText = countryList[i].name;
+        o.value = countryList[i].name;
+        select.appendChild(o)
+    }
+    let select2 = document.querySelector('.country2');
+    select2.parentElement.replaceChild(select.cloneNode(true), select2)
+}
 
 
 

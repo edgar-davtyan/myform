@@ -85,7 +85,7 @@
                     <p class="input-message">Please enter recipient sApt, Suite, Bldg, Gate Code. (optional).</p>
                 </div>
                 <div class="input-field">
-                    <input type="text" class="inp" placeholder="City">
+                    <input type="text" class="inp" name="city" placeholder="City">
                     <svg class="input-svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                          fill="none">
                         <path opacity="0.8" fill-rule="evenodd" clip-rule="evenodd"
@@ -94,8 +94,8 @@
                     </svg>
                 </div>
                 <div class="select-op">
-                    <select name="" id="" class="inp-phone">
-                        <option value="">Armenia</option>
+                    <select name="" id="a" class="inp-phone country">
+                        <option value="" selected>Country</option>
                     </select>
                     <div class="input-field">
                         <input type="text" placeholder="ZIP" name="zip" class="inp-zip-1 inp">
@@ -131,16 +131,14 @@
                               fill="#431C5D"/>
                     </svg>
                 </div>
-                <div>
-                    <input type="tel" placeholder="Country" class="inp-phone inp">
-                    <svg class="inp-phone-svg" xmlns="http://www.w3.org/2000/svg" width="14" height="8"
-                         viewBox="0 0 14 8"
-                         fill="none">
-                        <path d="M13 1L6.9277 7L1 1.16809" stroke="#9B9B9B" stroke-width="1.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"/>
-                    </svg>
-                    <input type="text" placeholder="ZIP" name="zip" class="inp-zip inp">
+                <div class="select-op">
+                    <select name="" id="" class="inp-phone country2">
+                        <option value="" selected>Country</option>
+                    </select>
+                    <div class="input-field">
+                        <input type="text" placeholder="ZIP" name="zip" class="inp-zip-1 inp">
+                        <p class="input-message">Please enter recipient zip code.</p>
+                    </div>
                 </div>
                 <div>
                     <input type="button" placeholder="Continue" class="inp-sub" value="Continue">
