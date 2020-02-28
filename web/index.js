@@ -132,8 +132,11 @@ geo.addEventListener('click', function () {
                     setCity(data);
                 }
             };
-        })
+        });
+
     }
+    let geo2 = document.querySelector(".input-svg-s");
+    geo.previousElementSibling.replaceChild(geo.cloneNode(true), geo2)
 });
 
 function setCity(data) {
@@ -169,12 +172,12 @@ past.addEventListener('click', inputPaste);
 function inputPaste() {
     let copy = document.querySelector('.copy');
     let pasts = document.querySelector('.pasts');
-    if (copy != null){
-        copy.value == pasts.value.posh
-    }else {
-        if (pasts != null){
+    if (copy != null) {
+        copy.value == pasts.value.push
+    } else {
+        if (pasts != null) {
             pasts.value.remove();
-            copy.value == pasts.value.posh
+            copy.value == pasts.value.push
         }
     }
 }
