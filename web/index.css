@@ -58,12 +58,40 @@ body {
     font-size: 10px;
     color: #FFF;
 }
-.forms-inputs{
+
+.forms-inputs {
     position: relative;
 }
+
 .billing {
     position: absolute;
     top: 0;
+}
+
+.billing-subtitle {
+    display: flex;
+    align-items: baseline;
+}
+
+.paste {
+    color: #5A1094;
+    font-family: 'sans-serif', 'Helvetica';
+    margin-left: 60px;
+    cursor: pointer;
+}
+.paste:hover {
+    text-decoration: underline;
+}
+
+[data-form]:not(:last-of-type)::after {
+    content: "";
+    background: url("My_photos/Group.png") no-repeat center;
+    background-size: 100%;
+    width: 12px;
+    height: 21px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
 }
 
 .payment {
@@ -105,10 +133,11 @@ body {
 .prev {
     font-family: 'sans-serif', 'Helvetica';
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     color: #979797;
     margin-bottom: 25px;
     cursor: pointer;
+    width: 65%;
 }
 
 .title {
@@ -131,10 +160,12 @@ body {
     font-weight: inherit;
     line-height: 30px;
 }
-.input-field{
+
+.input-field {
     position: relative;
 }
-.input-message{
+
+.input-message {
     position: absolute;
     top: -45px;
     left: -8px;
@@ -152,10 +183,12 @@ body {
     visibility: hidden;
     transition: all 0.5s;
 }
-.input-message.show{
+
+.input-message.show {
     opacity: 1;
     visibility: visible;
 }
+
 .input-message::after {
     content: "";
     display: block;
@@ -169,6 +202,7 @@ body {
     left: 40px;
     background: #fff;
 }
+
 .inp {
     font-family: 'sans-serif', 'Helvetica';
     width: 100%;
@@ -180,26 +214,31 @@ body {
     margin-bottom: 10px;
     position: relative;
 }
-.input-svg{
+
+.input-svg {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
 }
-.inp-field{
+
+.inp-field {
     position: relative;
 }
-.input-svg-s{
+
+.input-svg-s {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
 }
+
 .inp.inp-invalid {
     transition: all 0.3s;
     background: #ffffdd;
 }
-.inp-invalid-title{
+
+.inp-invalid-title {
     opacity: 0;
     visibility: hidden;
     display: none;

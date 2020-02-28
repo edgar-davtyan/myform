@@ -123,7 +123,7 @@ geo.addEventListener('click', function () {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (res) {
             let req = new XMLHttpRequest();
-            req.open("GET", 'https://api.opencagedata.com/geocode/v1/json?q=" + res.coords.latitude + "+" + res.coords.longitude + "&key=64297b985f9e40e9a107d283ad03d5bc', true);
+            req.open("GET", 'https://api.opencagedata.com/geocode/v1/json?q=' + res.coords.latitude + '+' + res.coords.longitude + '&key=64297b985f9e40e9a107d283ad03d5bc:', true);
             req.send();
             req.onreadystatechange = function (response) {
                 if (this.readyState == 4 && this.status == 200) {
@@ -138,7 +138,7 @@ geo.addEventListener('click', function () {
 
 function setCity(data) {
     let city = document.querySelector('[name="city"]');
-    city.value =data.results[0].components.city
+    city.value = data.results[0].components.city
 }
 
 getCounty();
@@ -155,6 +155,26 @@ function setCountries(countryList) {
     select2.parentElement.replaceChild(select.cloneNode(true), select2)
 }
 
+$(document).ready(function () {
+    $(".inp-phone").inputmask("+374 (99) 99 - 99 - 99")
+});
 
+$(document).ready(function () {
+    $("#email").inputmask();
+});
 
+let past = document.querySelector(".paste");
+past.addEventListener('click', inputPaste);
 
+function inputPaste() {
+    let copy = document.querySelector('.copy');
+    let pasts = document.querySelector('.pasts');
+    if (copy != null){
+        copy.value == pasts.value.posh
+    }else {
+        if (pasts != null){
+            pasts.value.remove();
+            copy.value == pasts.value.posh
+        }
+    }
+}

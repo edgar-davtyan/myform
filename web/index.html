@@ -56,18 +56,15 @@
     <div class="container">
         <header class="prev">
             <p data-form="shipping">Shipping</p>
-            <div class="border"></div>
             <p data-form="billing">Billing</p>
-            <div class="border"></div>
             <p data-form="payment">Payment</p>
         </header>
         <div class="forms-inputs">
-            <p class="inp-invalid-title">Please enter your text</p>
             <div class="form-item shipping">
                 <h2 class="title">Shipping Info</h2>
                 <h3 class="input-title">Recipient</h3>
                 <div class="input-field">
-                    <input type="text" class="inp" name="full-name" placeholder="Full Name">
+                    <input type="text" class="inp copy" name="full-name" placeholder="Full Name">
                     <p class="input-message">Please enter recipient full name.</p>
                 </div>
                 <div class="input-field">
@@ -77,15 +74,15 @@
                 </div>
                 <h3 class="input-title">Address</h3>
                 <div class="input-field">
-                    <input type="text" class="inp" placeholder="Street Address">
+                    <input type="text" class="inp " placeholder="Street Address">
                     <p class="input-message">Please enter recipient street address.</p>
                 </div>
                 <div class="input-field">
-                    <input type="text" class="inp" placeholder="Apt, Suite, Bldg, Gate Code. (optional)">
+                    <input type="text" class="inp " placeholder="Apt, Suite, Bldg, Gate Code. (optional)">
                     <p class="input-message">Please enter recipient sApt, Suite, Bldg, Gate Code. (optional).</p>
                 </div>
                 <div class="input-field">
-                    <input type="text" class="inp" name="city" placeholder="City">
+                    <input type="text" class="inp " name="city" placeholder="City">
                     <svg class="input-svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                          fill="none">
                         <path opacity="0.8" fill-rule="evenodd" clip-rule="evenodd"
@@ -94,11 +91,11 @@
                     </svg>
                 </div>
                 <div class="select-op">
-                    <select name="" id="a" class="inp-phone country">
+                    <select name="" id="a" class="inp-phone country ">
                         <option value="" selected>Country</option>
                     </select>
                     <div class="input-field">
-                        <input type="text" placeholder="ZIP" name="zip" class="inp-zip-1 inp">
+                        <input type="text" placeholder="ZIP" name="zip" class="inp-zip-1 inp ">
                         <p class="input-message">Please enter recipient zip code.</p>
                     </div>
                 </div>
@@ -107,20 +104,27 @@
                 </div>
             </div>
             <div class="form-item billing hidden">
+                <div class="billing-subtitle">
                 <h2 class="title">Billing Information</h2>
-                <h3 class="input-title">Billing Contact</h3>
-                <div>
-                    <input type="text" class="inp" name="full-name" placeholder="Full Name">
+                <p class="paste">Same as shipping</p>
                 </div>
-                <div>
-                    <input type="email" class="inp" placeholder="Email Address">
+                <h3 class="input-title">Billing Contact</h3>
+                <div class="input-field">
+                    <input type="text" class="inp pasts" name="full-name" placeholder="Full Name">
+                    <p class="input-message">Please enter recipient full name.</p>
+                </div>
+                <div class="input-field">
+                    <input id="email" data-inputmask="'alias': 'email'" inputmode="email" class="inp" placeholder="Email Address">
+                    <p class="input-message">Please enter recipient email address.</p>
                 </div>
                 <h3 class="input-title">Billing Address</h3>
-                <div>
+                <div class="input-field">
                     <input type="text" class="inp" placeholder="Street Address">
+                    <p class="input-message">Please enter recipient street address.</p>
                 </div>
-                <div>
+                <div class="input-field">
                     <input type="text" class="inp" placeholder="Apt, Suite, Bldg, Gate Code. (optional)">
+                    <p class="input-message">Please enter recipient sApt, Suite, Bldg, Gate Code. (optional).</p>
                 </div>
                 <div class="inp-field">
                     <input type="text" class="inp" placeholder="City">
@@ -236,7 +240,8 @@
 
     </div>
 </div>
-
+<script src="jQuery/jquery-3.4.1.min.js"></script>
+<script src="jQuery/jquery.inputmask.min.js"></script>
 <script src="index.js"></script>
 </body>
 </html>
