@@ -190,9 +190,9 @@ let past = document.querySelector(".paste");
 past.addEventListener('click', inputPaste);
 
 function inputPaste() {
-    let copy = document.querySelector('.copy');
-    let pasts = document.querySelector('.pasts');
+    let copy = document.querySelectorAll('.copy');
+    let pasts = document.querySelectorAll('.pasts');
     if (copy != null) {
-        copy.value = pasts.value
+        pasts[i].value = copy[i].value
     }
 }
