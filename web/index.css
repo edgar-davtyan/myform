@@ -98,7 +98,46 @@ body {
     position: absolute;
     top: 0;
 }
-
+.tanks-message{
+    position: absolute;
+    top: 0;
+}
+.tanks-title{
+    font-size: 26px;
+    line-height: 31px;
+    color: #5A1094;
+    font-family: 'sans-serif', 'Helvetica';
+    font-weight: 100;
+    padding-bottom: 20px;
+}
+.tanks-order{
+    font-size: 16px;
+    line-height: 19px;
+    font-family: 'sans-serif', 'Helvetica';
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.cord-email{
+    font-size: 16px;
+    line-height: 18px;
+    font-family: 'sans-serif', 'Helvetica';
+    padding-bottom: 20px;
+    width: 80%;
+}
+.date{
+    font-size: 16px;
+    line-height: 18px;
+    font-family: 'sans-serif', 'Helvetica';
+}
+.data{
+    font-size: 16px;
+    line-height: 18px;
+    font-family: 'sans-serif', 'Helvetica';
+    font-weight: bold;
+}
+.cord-email-color{
+    color: #5A1094;
+}
 .border {
     width: 15px;
     height: 15px;
@@ -139,7 +178,10 @@ body {
     cursor: pointer;
     width: 65%;
 }
-
+.color{
+    color: #5A1094;
+    transition: all 0.5s;
+}
 .title {
     font-family: 'sans-serif', 'Helvetica';
     color: #5A1094;

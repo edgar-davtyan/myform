@@ -63,8 +63,6 @@ function inpRow(ev) {
                     continue;
                 }
             }
-
-
             inputs[i].classList.remove('inp-invalid');
             let msg = inputs[i].closest('.input-field').querySelector('.input-message');
             if (msg) {
@@ -105,6 +103,19 @@ function switchForm(ev, fObj) {
     }
 }
 
+let p = document.querySelectorAll(".prev>p");
+for (let i = 0; i <p.length ; i++) {
+    p[i].addEventListener("click", menu)
+}
+
+function menu(ev) {
+    let v = ev.target;
+    if (v != null){
+        v.classList.toggle("color")
+    }
+}
+
+
 function getCounty() {
     let req = new XMLHttpRequest();
     req.open("GET", 'https://restcountries.eu/rest/v2/all', true);
@@ -123,7 +134,7 @@ geo.addEventListener('click', function () {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (res) {
             let req = new XMLHttpRequest();
-            req.open("GET", 'https://api.opencagedata.com/geocode/v1/json?q=' + res.coords.latitude + '+' + res.coords.longitude + '&key=64297b985f9e40e9a107d283ad03d5bc:', true);
+            req.open("GET", 'https://api.opencagedata.com/geocode/v1/json?q=' + res.coords.latitude + '+' + res.coords.longitude + '&key=64297b985f9e40e9a107d283ad03d5bc', true);
             req.send();
             req.onreadystatechange = function (response) {
                 if (this.readyState == 4 && this.status == 200) {
@@ -135,8 +146,6 @@ geo.addEventListener('click', function () {
         });
 
     }
-    let geo2 = document.querySelector(".input-svg-s");
-    geo.previousElementSibling.replaceChild(geo.cloneNode(true), geo2)
 });
 
 function setCity(data) {
@@ -165,7 +174,18 @@ $(document).ready(function () {
 $(document).ready(function () {
     $("#email").inputmask();
 });
-
+$(document).ready(function () {
+    $('.expire').inputmask({
+        alias: 'datetime',
+        inputFormat: 'mm/yy'
+    });
+});
+$(document).ready(function () {
+    $('.card').inputmask({
+        mask: "9{4} 9{4} 9{4} 9{4}",
+        inputFormat: 'XXXX XXXX XXXX XXXX'
+    });
+});
 let past = document.querySelector(".paste");
 past.addEventListener('click', inputPaste);
 
@@ -173,11 +193,6 @@ function inputPaste() {
     let copy = document.querySelector('.copy');
     let pasts = document.querySelector('.pasts');
     if (copy != null) {
-        copy.value == pasts.value.push
-    } else {
-        if (pasts != null) {
-            pasts.value.remove();
-            copy.value == pasts.value.push
-        }
+        copy.value = pasts.value
     }
 }
